@@ -4,7 +4,7 @@ var empty=9;
 var moves=-1;
 function shuffle(array) {
 	  var currentIndex = array.length, temporaryValue, randomIndex;
-
+	
 	  // While there remain elements to shuffle...
 	  while (0 !== currentIndex) {
 
@@ -56,15 +56,13 @@ function draw(){
 	  im=shuffle([1,2,3,4,5,6,7,8,0]);
 		for(var i=0;i<=8;i++){
 			if(im[i]==0)
-				empty=i+1;
-			
-				
+				empty=i+1;	
 		}
 		
 		console.log(empty);
 		
 	 ctx.clearRect(0,0,450,450);
-	  restart=0;
+		restart=0;
   }
 	for(var i=0;i<9;i++){
 		if(im[i]!=ar[i])
@@ -255,5 +253,5 @@ window.addEventListener('keydown', function (e) {
 function start(){
 draw();
 }
-ctx.font = "30px Arial";
+ctx.font = "30px Homer Simpson Revised";
 ctx.fillText("Hit S to start the game",80,210);
