@@ -3,7 +3,7 @@
   }
 
 .title {
-    font-size:100px; 
+    font-size:80px; 
     margin:auto; 
     text-align:center; 
     color:#FFD51F; 
@@ -60,7 +60,7 @@
 
 .button{
     width:100%; 
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .cell {
