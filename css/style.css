@@ -16,7 +16,7 @@
 }
 
 .shuffle{
-    margin-top: 50px;
+    margin-top:2rem;
     left: 50%;
     display: block;
     margin-left: auto;
@@ -26,8 +26,14 @@
     color: #125F95;
 }
 
-.class{
-    float: right;
+#moves {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:fit-content;
+	color: #FFD51F;
+	font-size: 30px;	
+	text-shadow:2px 2px black;
 }
 
 .button{
@@ -52,7 +58,7 @@
     margin-left: auto;
     margin-right: auto;
     width:fit-content;
-    margin-top: 100px;
+    margin-top: 4rem;
 }
 
 .game{
@@ -61,10 +67,15 @@
     justify-content:center;
 }
 
+html {
+    height: 100%;
+}
+
 body {
 	background: #00b4ff;
 	color: #333;
 	height: 100vh;
+	min-height: 100%;
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
@@ -78,7 +89,7 @@ body {
 #background-wrap {
     bottom: 0;
 	left: 0;
-	padding-top: 150px;
+	padding-top: 6rem;
 	position: fixed;
 	right: 0;
 	top: 0;

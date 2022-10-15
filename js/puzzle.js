@@ -11,6 +11,8 @@ var shufflebtn = document.getElementById("shuffle");
 var au = document.getElementById("au");
 var audio = document.getElementById("audio"); 
 var playing = true;
+var moves = 0;
+var it = true;
 
 function createField() {
     var cells = [];
@@ -47,6 +49,8 @@ function createInitialValues() {
 }
 
 function draw() {
+    mov=document.getElementById("moves");
+	mov.innerHTML="Moves: "+ moves.toString();
     for (var y = 0; y < size; y++) {
         for (var x = 0; x < size; x++) {
             var v = values[y][x];
@@ -60,7 +64,12 @@ function makeMove(move) {
     var newX = emptyX + move.dx, newY = emptyY + move.dy;
     if ((newX >= size) || (newX < 0) || (newY >= size) || (newY < 0)) {
           return false;
-     }
+    }else{
+        if(it===true){
+            moves++;
+        }
+        
+    }
     var c = values[newY][newX];
     values[newY][newX] = 0;
     values[emptyY][emptyX] = c;
@@ -71,8 +80,10 @@ function makeMove(move) {
 
 
 function shuffle() {
+    moves = 0;
     var options = [LEFT, RIGHT, UP, DOWN];
-    var iterations = 500;
+    var iterations = 1000;
+    it = false;
     for (var i = 0; i < iterations; i++) {
         var move = options[Math.floor(Math.random() * options.length)];
         makeMove(move);
@@ -97,6 +108,7 @@ function won() {
 }
 
 document.addEventListener('keydown', function(e) {
+    it=true;
     switch (e.keyCode) {
         case 38: makeMove(UP); break;
         case 40: makeMove(DOWN); break;
@@ -106,7 +118,7 @@ document.addEventListener('keydown', function(e) {
     draw();
     if (won()) {
         setTimeout(function() {
-            alert('you won!');
+            alert('you won in ' + moves.toString() + ' moves!');
             init();
         }, 1000);
     }
@@ -134,7 +146,7 @@ function init() {
     values = createInitialValues();
     shuffle();
     draw();
-    audio.volume = 0.1;
+    audio.volume = 0.03;
 }
 
 init();   
