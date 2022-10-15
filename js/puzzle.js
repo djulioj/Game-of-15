@@ -86,7 +86,7 @@ function makeMove(move) {
 function shuffle() {
     moves = 0;
     var options = [LEFT, RIGHT, UP, DOWN];
-    var iterations = 1000;
+    var iterations = 5000;
     it = false;
     for (var i = 0; i < iterations; i++) {
         var move = options[Math.floor(Math.random() * options.length)];
@@ -129,19 +129,11 @@ document.addEventListener('keydown', function(e) {
 });
 
 document.addEventListener('keyup', function(e) {
-    it=true;
     switch (e.keyCode) {
         case 38: up.src="./images/up-arrow.png"; break;
         case 40: down.src="./images/down-arrow.png"; break;
         case 37: left.src="./images/left-arrow.png"; break;
         case 39: right.src="./images/right-arrow.png"; break;
-    }
-    draw();
-    if (won()) {
-        setTimeout(function() {
-            alert('you won in ' + moves.toString() + ' moves!');
-            init();
-        }, 1000);
     }
 });
 
@@ -152,19 +144,18 @@ shufflebtn.addEventListener('click',function(e){
 
 au.addEventListener('click',function(e){
     if(playing === true){
-        audio.pause();
-        au.src="./images/nosound.png";
-        playing = false;
-    }else{
         audio.play();
         au.src="./images/sound.png";
+        playing = false;
+    }else{
+        audio.pause();
+        au.src="./images/nosound.png";
         playing = true;
     }
     
 });
 
 function init() {
-    audio.volume = 0.03;
     values = createInitialValues();
     shuffle();
     draw();
