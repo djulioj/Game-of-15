@@ -143,10 +143,10 @@ au.addEventListener('click',function(e){
 });
 
 function init() {
+    audio.volume = 0.03;
     values = createInitialValues();
     shuffle();
     draw();
-    audio.volume = 0.03;
 }
 
 init();   
