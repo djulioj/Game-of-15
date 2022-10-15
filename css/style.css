@@ -10,9 +10,31 @@
     text-shadow:5px 8px black;  
 }
 
-.homer {
-    position:absolute;
-    float: right;
+
+#right {
+	float: right;
+	margin-top: 0.5rem;
+}
+
+#up {
+	text-align: center;
+	margin: auto;
+	display: block;
+}
+
+#left {
+	text-align: center;
+	margin: auto;
+	display:inline-block;
+
+}
+
+#down {
+	margin-top: 0.5rem;
+	position: relative;         
+    display: inline-block;      
+    left: 25%;                   
+    transform: translate(-72%);
 }
 
 .shuffle{
@@ -28,7 +50,7 @@
 
 #moves {
 	display: block;
-    margin-left: auto;
+	margin-left: auto;
     margin-right: auto;
     width:fit-content;
 	color: #FFD51F;
@@ -42,18 +64,34 @@
 }
 
 .cell {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border: 2px solid #125F95;
     background-color: #FFD51F;
     border-radius: 5px;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     color: #125F95;
 }
 
+.instrucciones {
+	margin-top: 50px;
+	border-radius: 5px;
+	display: inline-block;
+	position: absolute;
+	height:150px;
+	width:220px;
+	margin-left: 150px;
+	background: rgba(255, 255, 255, 0.28);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(6.4px);
+	-webkit-backdrop-filter: blur(6.4px);
+	border: 1px solid rgba(255, 255, 255, 0.93);
+	justify-content: center;
+}
+
 #field {
-    border: 0px solid black;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -66,6 +104,12 @@
     align-items: center;
     justify-content:center;
 }
+
+@media screen and (max-width: 1200px) {
+	.instrucciones{
+	display:none;
+	}
+	}
 
 html {
     height: 100%;

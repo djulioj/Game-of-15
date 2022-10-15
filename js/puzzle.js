@@ -13,6 +13,10 @@ var audio = document.getElementById("audio");
 var playing = true;
 var moves = 0;
 var it = true;
+var up = document.getElementById("up");
+var left = document.getElementById("left");
+var down = document.getElementById("down");
+var right = document.getElementById("right");
 
 function createField() {
     var cells = [];
@@ -110,10 +114,27 @@ function won() {
 document.addEventListener('keydown', function(e) {
     it=true;
     switch (e.keyCode) {
-        case 38: makeMove(UP); break;
-        case 40: makeMove(DOWN); break;
-        case 37: makeMove(LEFT); break;
-        case 39: makeMove(RIGHT); break;
+        case 38: makeMove(UP); up.src="./images/up-arrow-blue.png"; break;
+        case 40: makeMove(DOWN); down.src="./images/down-arrow-blue.png"; break;
+        case 37: makeMove(LEFT); left.src="./images/left-arrow-blue.png"; break;
+        case 39: makeMove(RIGHT); right.src="./images/right-arrow-blue.png"; break;
+    }
+    draw();
+    if (won()) {
+        setTimeout(function() {
+            alert('you won in ' + moves.toString() + ' moves!');
+            init();
+        }, 1000);
+    }
+});
+
+document.addEventListener('keyup', function(e) {
+    it=true;
+    switch (e.keyCode) {
+        case 38: up.src="./images/up-arrow.png"; break;
+        case 40: down.src="./images/down-arrow.png"; break;
+        case 37: left.src="./images/left-arrow.png"; break;
+        case 39: right.src="./images/right-arrow.png"; break;
     }
     draw();
     if (won()) {
