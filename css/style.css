@@ -3,17 +3,36 @@
   }
 
 .title {
-    font-size:70px;
-    padding-top: 50px; 
+    font-size:100px; 
     margin:auto; 
     text-align:center; 
     color:#FFD51F; 
-    text-shadow:5px 5px black;  
+    text-shadow:5px 8px black;  
 }
 
 .homer {
     position:absolute;
     float: right;
+}
+
+.shuffle{
+    margin-top: 50px;
+    left: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:fit-content;
+    cursor:pointer;
+    color: #125F95;
+}
+
+.class{
+    float: right;
+}
+
+.button{
+    width:100%; 
+    font-size: 30px;
 }
 
 .cell {
@@ -33,7 +52,7 @@
     margin-left: auto;
     margin-right: auto;
     width:fit-content;
-    margin-top: 120px;
+    margin-top: 100px;
 }
 
 .game{
@@ -42,7 +61,7 @@
     justify-content:center;
 }
 
-  body {
+body {
 	background: #00b4ff;
 	color: #333;
 	height: 100vh;
@@ -50,6 +69,10 @@
 	padding: 0;
 	overflow-x: hidden;
     overflow-y: hidden;
+}
+
+.sound {
+    cursor: pointer;
 }
 
 #background-wrap {
@@ -196,3 +219,4 @@
 	right: 50px;
 	top: -90px;
 }   
+

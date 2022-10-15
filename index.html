@@ -1,96 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-  <link href="http://fonts.cdnfonts.com/css/homer-simpson-revised" rel="stylesheet">
-  <link rel="stylesheet" href="./css/estilos.css">
-  <link rel="stylesheet" href="./css/normalize.css">
-	<title>SIMPSONS PUZZLE</title>
-</head>
-<body scroll="no">
-  <div id="background-wrap">
-    <div class="x1">
-      <div class="cloud"></div>
-    </div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game 15</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link href="http://fonts.cdnfonts.com/css/homer-simpson-revised" rel="stylesheet">
+  </head>
+  <body>
+    <img src="./images/sound.png" class="sound" alt="" id="au"> 
 
-    <div class="x2">
-        <div class="cloud"></div>
-    </div>
-
-    <div class="x3">
-        <div class="cloud"></div>
-    </div>
-
-    <div class="x4">
-        <div class="cloud"></div>
-    </div>
-
-    <div class="x5">
-        <div class="cloud"></div>
-    </div>
-  </div>
-  <div id="top">
     <header class="head">
-      <h1 class="title">SIMPSONS PUZZLE</h1>
+        <h1 class="title">Taken Game</h1>
     </header>
       
-    <div class="container">
-      <div>
-        <div class="container2">
-          <div class="subtitle">
-            <h1 id="message"></h1>
-          </div>
-          <div class="game">
-            <audio loop autoplay>
-              <source src="./bg_sound.mp3" type="audio/mp3">
-            </audio>
+    <audio src="./audio/bg_sound.mp3" autoplay="autoplay" loop="loop" id="audio"> </audio>
+    
+    <div class="game">
+      <div id="background-wrap">
+        <div class="x1">
+          <div class="cloud"></div>
+        </div>
+    
+        <div class="x2">
+          <div class="cloud"></div>
+        </div>
       
-            <audio id="cheers" class="audio" controls="none" preload="auto">
-              <source src="aud.mp3" type="audio/mp3">
-            </audio>
-        
-            <audio id="cut" class="audio" controls="none" preload="auto">
-              <source src="cut.mp4" type="audio/mp4">
-            </audio>
-        
-            <audio id="no" class="audio" controls="none" preload="auto">
-              <source src="no.mp4" type="audio/mp4">
-            </audio>
-
-            
-          </div>
-          <div>
-            
-            <canvas id="canvas" height="450px" width="450px"></canvas>
-            
-          </div>
-          
+        <div class="x3">
+          <div class="cloud"></div>
         </div>
-        <div class="original">
-          <h1 class="originaltxt">ORIGINAL IMAGE</h1>
-          <div style="margin:auto">
-            <img src="images/puzz1.jpg" id="puzz1" width="150" height="150">
-            <img src="images/puzz2.jpg" id="puzz2" width="150" height="150">
-            <img src="images/puzz3.jpg" id="puzz3" width="150" height="150">
-          </div>
-          <div>
-            <img src="images/puzz4.jpg" id="puzz4" width="150" height="150">
-            <img src="images/puzz5.jpg" id="puzz5" width="150" height="150">
-            <img src="images/puzz6.jpg" id="puzz6" width="150" height="150">
-          </div>
-          <div>
-            <img src="images/puzz7.jpg" id="puzz7" width="150" height="150">
-            <img src="images/puzz8.jpg" id="puzz8" width="150" height="150">
-            <img src="images/puzz9.jpg" id="puzz9" width="150" height="150">
-          </div>
+      
+        <div class="x4">
+          <div class="cloud"></div>
         </div>
-        <h1 id="moves"></h1>
+      
+        <div class="x5">
+          <div class="cloud"></div>
+        </div>
       </div>
     </div>
     
-  </div>
-</body>
-<script src="./index.js"></script>
+
+    <div>
+      <table id="field"></table>
+      <div class="button">
+        <button class="shuffle" id="shuffle">
+          Shuffle
+        </button>
+      </div>
+    </div>
+    
+
+  </body>
+  <script src="./js/puzzle.js"></script>
 </html>

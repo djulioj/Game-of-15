@@ -6,6 +6,11 @@ var LEFT = {dx: 1, dy: 0};
 var RIGHT = {dx: -1, dy: 0};
 var UP = {dx: 0, dy: 1};
 var DOWN = {dx: 0, dy: -1};
+var moves = 0;
+var shufflebtn = document.getElementById("shuffle");
+var au = document.getElementById("au");
+var audio = document.getElementById("audio"); 
+var playing = true;
 
 function createField() {
     var cells = [];
@@ -64,16 +69,17 @@ function makeMove(move) {
     return true;
 }
 
+
 function shuffle() {
     var options = [LEFT, RIGHT, UP, DOWN];
-    var iterations = 5;
+    var iterations = 500;
     for (var i = 0; i < iterations; i++) {
         var move = options[Math.floor(Math.random() * options.length)];
         makeMove(move);
     }
 }
 
-function gameOver() {
+function won() {
     var expectedValue = 1;
     for (var y = 0; y < size; y++) {
         for (var x = 0; x < size; x++) {
@@ -98,7 +104,7 @@ document.addEventListener('keydown', function(e) {
         case 39: makeMove(RIGHT); break;
     }
     draw();
-    if (gameOver()) {
+    if (won()) {
         setTimeout(function() {
             alert('you won!');
             init();
@@ -106,10 +112,29 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+shufflebtn.addEventListener('click',function(e){
+    shuffle();
+    draw();
+});
+
+au.addEventListener('click',function(e){
+    if(playing === true){
+        audio.pause();
+        au.src="./images/nosound.png";
+        playing = false;
+    }else{
+        audio.play();
+        au.src="./images/sound.png";
+        playing = true;
+    }
+    
+});
+
 function init() {
     values = createInitialValues();
     shuffle();
     draw();
+    audio.volume = 0.1;
 }
 
 init();   
