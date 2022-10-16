@@ -159,6 +159,7 @@ function init() {
     values = createInitialValues();
     shuffle();
     draw();
+    audio.volume = 0.03;
 }
 
 init();   
